@@ -12,17 +12,17 @@
 
   <body>
     <header>
-      <h1>Bookers</h1>
-      <li><%= link_to'Home',user_path(current_user.id) %>
-      </li>
+      <div><a href ="/">Bookers</a></div>
     <% if user_signed_in? %>
+    <li>Home</li><!--ユーザー詳細投稿画面-->
     <li>Users</li>
     <li>Books</li>
     <li>
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </li>
     <% else %>
-    <li>About</li>
+    <li><a href = "/">Home</a></li>
+    <li><%= link_to "About",about_path %></li>
     <li>
       <%= link_to "Sign Up", new_user_registration_path %>
     </li>
