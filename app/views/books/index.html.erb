@@ -1,0 +1,58 @@
+<main>
+<h2>User info</h2>
+<image></image><!--ユーザーの画像表示-->
+<table>
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th></th><!--ユーザー情報が入るよ-->
+    </tr>
+    </tbody>
+</table>
+<div><a><!--ユーザー情報詳細に飛ぶボタン--></a></div>
+
+
+<div>
+  <h2>New book</h2>
+<%= form_with model: @book, local:true do |f| %>
+
+<div class = "field">
+<h4>Title</h4>
+  <%= f.text_field :title %>
+</div>
+
+<div class = "field">
+<h4>Option</h4>
+<%= f.text_area :body %>
+</div>
+
+<div class = "actions">
+<br><%= f.submit 'Create Book'%></br>
+</div>
+
+<% end %>
+</div>
+
+<h2>Books</h2>
+<table>
+ <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Caption</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<tbody>
+  <% @books.each do |book| %>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <% end %>
+</tbody>
+</table>
+</main>
