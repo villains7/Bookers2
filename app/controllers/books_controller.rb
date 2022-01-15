@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def index
      @book = Book.new
      @books = Book.all
-     @user = current_user
+     @user = User.find(current_user.id)
   end
 
   def show
@@ -31,6 +31,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/books'
     flash[:sestroy] ="You have deleted book successfully!"
   end
 

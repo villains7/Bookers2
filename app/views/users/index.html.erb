@@ -1,0 +1,19 @@
+<%= render 'sidebar', book: @book, user: @user %>
+
+<h2>Users</h2>
+<table>
+ <thead>
+   <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+    <td><%= image_tag user.get_profile_image %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "show",user_path(user.id) %></td>
+  <% end %>
+  </tbody>
+  </table>
