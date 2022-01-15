@@ -5,12 +5,12 @@
 <table>
   <tbody>
     <tr>
-      <td><%= image_tag @book.user.get_profile_image %><%= link_to @book.user.name,user_path(@user) %></td>
+      <td><%= image_tag @book.user.get_profile_image %><br><%= link_to @book.user.name,user_path(@user) %></br></td>
       <td><%= link_to @book.title, book_path(@book.id)%></td>
       <td><%= @book.body %></td>
       <% if @user == current_user %>
-      <td><%= link_to"Edit",edit_user_path(@user) %></td>
-      <td><%= link_to"Destroy",book_path,method: :delete%></td>
+      <td><%= link_to"Edit",edit_book_path(@book.id) %></td>
+      <td><%= link_to"Destroy",book_path(@book.id), method: :delete,"data-confirm"=>"本当に消しますか？" %></td>
     </tr>
     <% end %>
   </tbody>
