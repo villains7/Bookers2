@@ -31,6 +31,13 @@
     </li>
     <% end %>
     </header>
+    <main>
+      <p><%= flash[:create] %></p>
+      <p><%= flash[:update] %></p>
+      <p><%= flash[:destroy] %></p>
+      <p><%= flash[:user_update] %></p>
+
+    </main>
 
     <%= yield %>
     <footer>
