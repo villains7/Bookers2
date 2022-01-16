@@ -13,28 +13,29 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><div class = "container"><span class = "Bookers"><a href ="/">Bookers</a></span>
-    <% if user_signed_in? %>
-    <ul><i class="fas fa-house-user"></i><%= link_to "Home", user_path(current_user.id) %></li><!--ユーザー詳細投稿画面-->
-    <i class="fas fa-users"></i><%= link_to "Users",users_path %></li>
-    <i class="fas fa-book-open"></i><%= link_to "Books", books_path %></li>
-    <i class="fas fa-sign-out-alt"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    </li>
-    <% else %>
-    <i class="fas fa-house-user"></i><a href = "/">Home</a></li>
-    <i class="fas fa-candy-cane"></i><%= link_to "About",about_path %></li>
-    <i class="fas fa-user-plus"></i><%= link_to "Sign Up", new_user_registration_path %>
-    </li>
-    <i class="fas fa-sign-in-alt"></i><%= link_to "Log in", new_user_session_path %>
-    </li></ul>
-    <% end %>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class = "container">
+        <a class ="navbar-brand p-3" href ="/">Bookers</a>
+         <ul class ="navbar-nav ml-auto">
+         <% if user_signed_in? %>
+           <i class="fas fa-house-user fa-lg" style="color:white"></i><%= link_to "Home", user_path(current_user.id) %></li><!--ユーザー詳細投稿画面-->
+           <i class="fas fa-users fa-lg" style="color:white"></i><%= link_to "Users",users_path %></li>
+           <i class="fas fa-book-open fa-lg" style="color:white"></i><%= link_to "Books", books_path %></li>
+           <i class="fas fa-sign-out-alt fa-lg"style="color:white"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+         <% else %>
+           <i class="fas fa-house-user fa-lg" style="color:white"></i><a href = "/">Home</a></li>
+           <i class="fas fa-candy-cane fa-lg" style="color:white"></i><%= link_to "About",about_path %></li>
+           <i class="fas fa-user-plus fa-lg" style="color:white"></i><%= link_to "Sign Up", new_user_registration_path %></li>
+           <i class="fas fa-sign-in-alt fa-lg" style="color:white"></i><%= link_to "Log in", new_user_session_path %></li>
+         </ul>
+         <% end %>
+      </div>
     </nav>
     </header>
-    <main>
-      <p><%= flash[:create] %></p>
-      <p><%= flash[:update] %></p>
-      <p><%= flash[:destroy] %></p>
+  <main>
+      <p class ="notice"><%= flash[:create] %></p>
+      <p class ="notice"><%= flash[:update] %></p>
+      <p class ="notice"><%= flash[:destroy] %></p>
       <p><%= flash[:user_update] %></p>
      <% if notice %>
 　　  <p><%= notice %></p>
@@ -43,13 +44,15 @@
      <p><%= alert %></p>
      <% end %>
 
-    </main>
+  </main>
 
     <%= yield %>
     <footer>
       <div class = "container mt-5">
         <div class = "row">
-        <p>CopyRight Infratop.inc</p>
+          <div class ="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -24,6 +24,10 @@
     padding: 0.5rem 1rem;
 }
 
+.notice {
+  color: green;
+}
+
 /*フッター*/
 .row {
     display: flex;
