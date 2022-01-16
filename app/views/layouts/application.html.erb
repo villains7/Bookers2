@@ -5,51 +5,52 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <script src="https://kit.fontawesome.com/822ad2200d.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application','data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <div><a href ="/">Bookers</a></div>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><div class = "container"><span class = "Bookers"><a href ="/">Bookers</a></span>
     <% if user_signed_in? %>
-    <li><%= link_to "Home", user_path(current_user.id) %></li><!--ユーザー詳細投稿画面-->
-    <li><%= link_to "Users",users_path %></li>
-    <li><%= link_to "Books", books_path %></li>
-    <li>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <ul><i class="fas fa-house-user"></i><%= link_to "Home", user_path(current_user.id) %></li><!--ユーザー詳細投稿画面-->
+    <i class="fas fa-users"></i><%= link_to "Users",users_path %></li>
+    <i class="fas fa-book-open"></i><%= link_to "Books", books_path %></li>
+    <i class="fas fa-sign-out-alt"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </li>
     <% else %>
-    <li><a href = "/">Home</a></li>
-    <li><%= link_to "About",about_path %></li>
-    <li>
-      <%= link_to "Sign Up", new_user_registration_path %>
+    <i class="fas fa-house-user"></i><a href = "/">Home</a></li>
+    <i class="fas fa-candy-cane"></i><%= link_to "About",about_path %></li>
+    <i class="fas fa-user-plus"></i><%= link_to "Sign Up", new_user_registration_path %>
     </li>
-    <li>
-      <%= link_to "Log in", new_user_session_path %>
-    </li>
+    <i class="fas fa-sign-in-alt"></i><%= link_to "Log in", new_user_session_path %>
+    </li></ul>
     <% end %>
+    </div>
+    </nav>
     </header>
     <main>
       <p><%= flash[:create] %></p>
       <p><%= flash[:update] %></p>
       <p><%= flash[:destroy] %></p>
       <p><%= flash[:user_update] %></p>
-      <% if notice %>
-　　<p><%= notice %></p>
-<% end %>
-<% if alert %>
-   <p><%= alert %></p>
-<% end %>
+     <% if notice %>
+　　  <p><%= notice %></p>
+     <% end %>
+     <% if alert %>
+     <p><%= alert %></p>
+     <% end %>
 
     </main>
 
     <%= yield %>
     <footer>
-      <div><div>
+      <div class = "container mt-5">
+        <div class = "row">
         <p>CopyRight Infratop.inc</p>
-      </div>
+        </div>
       </div>
     </footer>
   </body>

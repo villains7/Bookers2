@@ -1,6 +1,6 @@
 <main>
 <h2>User info</h2>
-<div><%= image_tag user.get_profile_image%></div>
+<div><%= image_tag user.get_profile_image %></div>
 <table>
   <tbody>
     <tr></tr>
@@ -15,7 +15,7 @@
     </tbody>
 </table>
 <div>
-<%= link_to "ボタン",edit_user_path(current_user) %>
+<i class="fas fa-user-cog"></i><%= button_to "",edit_user_path(current_user) %>
 </div>
 
 
