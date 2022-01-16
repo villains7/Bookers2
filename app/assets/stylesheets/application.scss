@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Bookers a , li {
+  text-decoration: none;
+}
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+.navbar-expand-lg {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.form-group {
+  margin-bottom: 2px;
+}
+
+.actions {
+  padding-top:2px;
+}
+/*フッター*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-   before_action :authenticate_user!, except: [:top]
+   before_action :authenticate_user!, except: [:top,:about]
+   add_flash_types :success, :info, :warning, :danger
   before_action :configure_permitted_parameters,if: :devise_controller?
 
   def after_sign_in_path_for(resource)
@@ -10,10 +11,6 @@ class ApplicationController < ActionController::Base
    user_path(resource)
   end
 
-
-  def after_sign_out_path_for(resource)
-    root_path
-  end
 
 
   protected
